@@ -1,6 +1,6 @@
-<!doctype html>
+<!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <title>Big Red Hacks Natural Disaster Sentiments?</title>
     <script src="{{ url_for('static', filename='script.js')}}"></script>
@@ -8,10 +8,18 @@
   </head>
   <body>
     <h1>Natural Disaster Sentiments</h1>
-    <form>
+    <form onsubmit="onFormSubmit();">
       <label>Please let us know what you thought about the last natural disaster:</label>
-      <textarea rows = "5" cols="80"></textarea>
+      <textarea id="responseText" rows = "5" cols="80"></textarea>
       <button type="submit">Submit</button>
     </form>
+
+    <script>
+      function onFormSubmit(){
+        var responseText = document.getElementById("responseText").value;
+        console.log(responseText);
+        alert(responseText);
+      }
+    </script>
   </body>
 </html>
